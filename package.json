@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "build": "echo \"No build step defined\" && mkdir -p build && cp -r public/* build/ 2>/dev/null || true"
+  }
+}

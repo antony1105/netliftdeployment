@@ -1,0 +1,23 @@
+# ---------- Build ----------
+[build]
+  command = "npm run build"
+  publish = "build"        # change to "public" if your site outputs there
+  environment = { 
+    REACT_APP_MARKETSTACK_KEY = "e96201e6f36deb49b94f2e88ced93757"
+  }
+
+# ---------- Functions ----------
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# ---------- Redirects (API -> Functions) ----------
+[[redirects]]
+  from = "/api/env-check"
+  to   = "/.netlify/functions/env-check"
+  status = 200
+
+[[redirects]]
+  from = "/api/marketstack"
+  to   = "/.netlify/functions/marketstack-proxy"
+  status = 200
