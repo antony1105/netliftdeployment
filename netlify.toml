@@ -6,8 +6,7 @@ publish = "build"
 directory = "netlify/functions"
 node_bundler = "esbuild"
 
-# Optional: if secrets-scan still flags the key name elsewhere,
-# keep scanning ON but tell it to ignore these variable names.
 [secrets_scan]
 enabled = true
 omit_keys = ["REACT_APP_MARKETSTACK_KEY", "MARKETSTACK_KEY", "REACT_APP_API_KEY"]
+omit_paths = [".env.example"]
