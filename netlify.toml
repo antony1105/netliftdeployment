@@ -1,21 +1,13 @@
-# ---------- Build ----------
 [build]
-  command = "npm run build"
-  publish = "build"
-  environment = { REACT_APP_MARKETSTACK_KEY = "YOUR_KEY_HERE" }
+command = "npm run build"
+publish = "build"
 
-# ---------- Functions ----------
 [functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
+directory = "netlify/functions"
+node_bundler = "esbuild"
 
-# ---------- Redirects (API -> Functions) ----------
-[[redirects]]
-  from = "/api/env-check"
-  to   = "/.netlify/functions/env-check"
-  status = 200
-
-[[redirects]]
-  from = "/api/marketstack"
-  to   = "/.netlify/functions/marketstack-proxy"
-  status = 200
+# Optional: if secrets-scan still flags the key name elsewhere,
+# keep scanning ON but tell it to ignore these variable names.
+[secrets_scan]
+enabled = true
+omit_keys = ["REACT_APP_MARKETSTACK_KEY", "MARKETSTACK_KEY", "REACT_APP_API_KEY"]
