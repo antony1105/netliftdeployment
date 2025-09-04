@@ -1,10 +1,8 @@
 # ---------- Build ----------
 [build]
   command = "npm run build"
-  publish = "build"        # change to "public" if your site outputs there
-  environment = { 
-    REACT_APP_MARKETSTACK_KEY = "e96201e6f36deb49b94f2e88ced93757"
-  }
+  publish = "build"
+  environment = { REACT_APP_MARKETSTACK_KEY = "e96201e6f36deb49b94f2e88ced93757" }
 
 # ---------- Functions ----------
 [functions]
