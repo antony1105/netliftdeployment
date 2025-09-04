@@ -2,7 +2,7 @@
 [build]
   command = "npm run build"
   publish = "build"
-  environment = { REACT_APP_MARKETSTACK_KEY = "e96201e6f36deb49b94f2e88ced93757" }
+  environment = { REACT_APP_MARKETSTACK_KEY = "YOUR_KEY_HERE" }
 
 # ---------- Functions ----------
 [functions]
